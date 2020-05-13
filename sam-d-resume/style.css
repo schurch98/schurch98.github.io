@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+
+
+head{
+    font-family: 'Roboto', 'Source Sans Pro';
+}
+
+/* step one - build your grid */
+.container {
+    /*setting alpha = 0.5*/
+    background-color: rgba(216, 221, 222, 0.5);
+    padding:5%;
+    /* height: 100%; */
+    display: grid;
+    grid-gap: 20px;
+    /* this will be  the same for everyone */
+    grid-template-columns: repeat(12, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: auto;
+    /* use letters from step 2 to build the grid */
+    grid-template-areas: 
+        "h h h h h h h h c c c c"
+        "p p p p p p p p d d d d"
+        "e e e e e e e e d d d d"
+        "e e e e e e e e s s s s"
+        "e e e e e e e e i i i i";
+}
+
+/* step three - build a grid that becomes active when the pixels are 800px or less */
+@media screen and (max-width: 800px) {
+
+    .container{
+        background-color: rgba(216, 221, 222, 0.5);
+        display: grid;
+        grid-gap: 3px;
+        /* grid is only one column, keep this way */
+        grid-template-columns: 1fr;
+        /* you can enter values, or auto will adjust the box sizes based on content */
+        grid-template-rows: auto;
+        grid-template-areas:
+        "h"
+        "c"
+        "p"
+        "e"
+        "d"
+        "s"
+        "i";      
+    }
+
+    .profile {
+        grid-area: p;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .education {
+        grid-area: d;
+        padding-bottom: 20px;
+    }
+
+    .interests {
+        grid-area: i;
+        padding-top: 20px;
+    }
+}
+
+/* step 1 - assign each of your sections a letter */
+header {
+    grid-area: h; 
+}
+
+.hr {
+    border: 5px solid rgb(30,100,170);
+    border-radius: 1px;
+    margin-top: -8px;
+}
+
+.profile {
+    grid-area: p;
+    padding-bottom: 20px;
+}
+
+.employment {
+    grid-area: e;
+}
+
+.contact {
+    grid-area: c;
+    padding-top:10px;
+}
+
+.education {
+    grid-area: d;
+    padding-top: 80px;
+}
+
+.skills {
+    grid-area: s;
+}
+
+.interests {
+    grid-area: i;
+}
+
+h1{
+    font-family: 'Roboto';
+    font-size: 40pt;
+}
+
+h2{
+    font-family: 'Roboto';
+    font-weight: 400;
+    
+}
+
+h3{
+    font-family: 'Roboto';
+    font-size: 22pt;
+}
+
+h4{
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+.italic{
+    font-family: 'Lato';
+}
+
+.bold{
+    font-family: 'Lato';
+    font-weight: 700;
+}
+
+p{
+    font-family: 'Lato'; 
+    font-weight: 300;
+}
